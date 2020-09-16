@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -8,22 +8,33 @@ import {
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
+import Header from './components/Header/Header';
+import Booking from './components/Booking/Booking';
+import Hotels from './components/Hotels/Hotels';
+import SignUp from './components/SignUp/SignUp';
+
 
 function App() {
-  
   return (
     
-      
+      <div className="App">
+
       <Router>
-      
+        <Header></Header>
         <Switch>
           <Route path='/home'>
             <Home></Home>
           </Route>
-          {/* <Route path=''>
-            
+          <Route path='/booking/:imageId'>
+            <Booking></Booking>
           </Route>
-          <PrivateRoute path=''>
+          <Route path="/hotels">
+            <Hotels></Hotels>
+          </Route>
+          <Route path="/signup">
+            <SignUp></SignUp>
+          </Route>
+          {/* <PrivateRoute path=''>
           
           </PrivateRoute>
           <Route path="">
@@ -34,7 +45,7 @@ function App() {
           </PrivateRoute>
           <Route path=''>
           
-          </Route> */}
+          </Route>  */}
           <Route exact path='/'>
             <Home></Home>
           </Route>
@@ -43,6 +54,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
+      </div>
       
     
   );

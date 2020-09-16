@@ -1,0 +1,38 @@
+.signUp{
+    padding:50px;
+    margin-left:30%;
+    text-align:center;
+   
+    
+}
+.signUpForm{
+    
+    background-color: white;
+    width: 90%;
+    padding: 40px;
+    border-radius:5px;
+}
+ .signUp p,h1{
+    text-align: center;
+}
+.signUpButton{
+    margin-top:10px;
+}
+.loginLink{
+    color: #FFD300;
+}
+.signUpWith{
+    text-align:center;
+}
+.socialIconButton{
+    margin-top: 3%;
+    border-radius: 100px !important;
+    width: 42%;
+    outline: none;
+}
+.socialIcon{
+    width: 30px;
+}
+.socialIconText{
+    margin-left: 4px;
+}
