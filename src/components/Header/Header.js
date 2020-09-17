@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import logo from '../../utilities/LogoWhite.png'
 import {
     Navbar,
@@ -9,12 +9,18 @@ import {
     Button
   } from "react-bootstrap";
   import './Header.css';
+import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 
 const Header = () => {
+  
+  const [loggedInUser,setLoggedInUser]=useContext(UserContext);
+  
+  
     return (
         <Container className="navContainer">
           <Navbar  collapseOnSelect expand="lg">
-  <Navbar.Brand href="/home"><img className="logo" src={logo} alt="logo"/></Navbar.Brand>
+  <Link to="/home"><Navbar.Brand><img className="logo" src={logo} alt="logo"/></Navbar.Brand></Link>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   
   <Navbar.Collapse id="responsive-navbar-nav">
@@ -28,7 +34,8 @@ const Header = () => {
       <Nav.Link className="whiteText" href="#">Destination</Nav.Link>
       <Nav.Link className="whiteText" href="#">Blog</Nav.Link>
       <Nav.Link className="whiteText" href="#">Contact</Nav.Link>
-      <button className="btn btn-warning">Login</button>
+      <Link to="/login"><button className="btn btn-warning mr-2">LogIn</button></Link>
+      <Link to="/login"><button className="btn btn-warning" onClick={()=>{setLoggedInUser({})}}>Sign Out</button></Link>
       
       
     </Nav>

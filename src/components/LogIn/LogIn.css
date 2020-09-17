@@ -1,34 +1,42 @@
-.signUpPage{
-   background-color: white;  
-   z-index:1;
-}
-.signUp{
+.LogInPage{
+    background-image: none;
+    background-color: white;  
+    z-index:1;
+ }
+.login{
     padding:50px;
     margin-left:30%;
 }
-.signUpForm{
+.logInForm{
     background-color: white;
     width: 90%;
     padding: 40px;
     border-radius:5px;
+    margin-top:2%;
 }
- .signUp p,h1{
+ .login p,h1{
     text-align: center;
 }
-.signUpButton{
+.LogInButton{
     margin-top:10px;
     width:100%
 }
-.loginLink{
+
+ .login p,h1,h3{
+    text-align: center;
+}
+
+.LogInLink{
     color: #FFD300;
 }
-.signUpWith{
-    text-align:center;
+.logInWith{
+    margin-left: 33%;
+    margin-top: 3%;
 }
 .socialIconButton{
     margin-top: 2%;
     border-radius: 100px !important;
-    width: 42%;
+    width: 45%;
     outline: none;
 }
 .socialIcon{
@@ -38,7 +46,6 @@
     margin-left: 4px;
 }
 hr{
-    
     width:20%;
     background-color:gray;
 }

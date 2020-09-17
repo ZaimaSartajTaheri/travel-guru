@@ -4,7 +4,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
 } from "react-router-dom";
 import Home from './components/Home/Home';
 import NotFound from './components/NotFound/NotFound';
@@ -12,11 +11,19 @@ import Header from './components/Header/Header';
 import Booking from './components/Booking/Booking';
 import Hotels from './components/Hotels/Hotels';
 import SignUp from './components/SignUp/SignUp';
+import LogIn from './components/LogIn/LogIn'
+import { createContext } from 'react';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import { MapContainer } from './components/Hotels/MapContainer';
+export const UserContext=createContext();
 
 
 function App() {
+  const [loggedIn,setLoggedIn]=useState({});
   return (
-    
+    <UserContext.Provider value={[loggedIn,setLoggedIn]} >
+      
+      
       <div className="App">
 
       <Router>
@@ -25,27 +32,21 @@ function App() {
           <Route path='/home'>
             <Home></Home>
           </Route>
+          <Route path='/mapcontainer'>
+            <MapContainer></MapContainer>
+          </Route>
           <Route path='/booking/:imageId'>
             <Booking></Booking>
-          </Route>
-          <Route path="/hotels">
-            <Hotels></Hotels>
           </Route>
           <Route path="/signup">
             <SignUp></SignUp>
           </Route>
-          {/* <PrivateRoute path=''>
-          
-          </PrivateRoute>
-          <Route path="">
-        
+          <Route path="/login">
+            <LogIn></LogIn>
           </Route>
-          <PrivateRoute path="">
-            
+          <PrivateRoute path="/hotels">
+              <Hotels></Hotels>
           </PrivateRoute>
-          <Route path=''>
-          
-          </Route>  */}
           <Route exact path='/'>
             <Home></Home>
           </Route>
@@ -55,6 +56,7 @@ function App() {
         </Switch>
       </Router>
       </div>
+      </UserContext.Provider>
       
     
   );

@@ -45,7 +45,7 @@ const Home = () => {
         </Grid>
         <Grid item xs={12} sm={4}  md={4} className="image-container">
         <Link to='/booking/3'><img className="image" src={sundorbon} alt="sundorbon"/></Link>
-        <div class="image-text">SUNDORBON</div>
+        <div className="image-text">SUNDORBON</div>
         </Grid>
         </Grid>
       </Grid>

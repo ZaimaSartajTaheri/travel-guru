@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import places from '../../fakeData/place-description';
 import {Container} from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
@@ -9,7 +9,6 @@ import './Booking.css';
 import DateFnsUtils from '@date-io/date-fns';
 import {
   MuiPickersUtilsProvider,
-  KeyboardTimePicker,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
 const useStyles = makeStyles((theme) => ({
@@ -110,7 +109,7 @@ const Booking = () => {
                     </MuiPickersUtilsProvider>
                     </Grid> 
                 </Grid>
-                <button className='btn btn-warning bookingButton'>Book Now</button>
+                <Link to="/hotels"><button className='btn btn-warning bookingButton'>Book Now</button></Link>
 
             </form>
             
