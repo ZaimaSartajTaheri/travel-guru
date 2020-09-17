@@ -1,8 +1,8 @@
-.LogInPage{
+/* .LogInPage{
     background-image: none;
     background-color: white;  
     z-index:1;
- }
+ } */
 .login{
     padding:50px;
     margin-left:30%;
@@ -31,7 +31,7 @@
 }
 .logInWith{
     margin-left: 33%;
-    margin-top: 3%;
+    
 }
 .socialIconButton{
     margin-top: 2%;
@@ -47,7 +47,7 @@
 }
 hr{
     width:20%;
-    background-color:gray;
+    background-color:white;
 }
 .hr-first{
     margin-left:29%;
@@ -57,5 +57,5 @@ hr{
 }
 .or-text{
     margin-top:3px;
-    color:gray;
+    color:white;
 }

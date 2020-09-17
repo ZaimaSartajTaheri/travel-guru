@@ -74,6 +74,7 @@ const fbSignIn = () => {
         
                   signInWithEmailPassword(data.email,data.password)
                   .then(res=>{
+                    console.log(res);
                     setUser(res);
                     setLoggedInUser(res);
                     history.replace(from);

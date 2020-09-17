@@ -1,7 +1,7 @@
-.signUpPage{
+/* .signUpPage{
    background-color: white;  
    z-index:1;
-}
+} */
 .signUp{
     padding:50px;
     margin-left:30%;
@@ -16,7 +16,7 @@
     text-align: center;
 }
 .signUpButton{
-    margin-top:10px;
+    margin-top:5px;
     width:100%
 }
 .loginLink{

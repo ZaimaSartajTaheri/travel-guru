@@ -9,6 +9,7 @@ import './Home.css';
 import { Link } from 'react-router-dom';
 
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -22,7 +23,7 @@ const Home = () => {
     
     const classes = useStyles();
     return (
-
+    
     <div className={classes.root}>
       
       <Container>
@@ -37,11 +38,11 @@ const Home = () => {
         <Grid item md={7}  container spacing={2}>
         <Grid item xs={12} sm={4}  md={4} className="image-container">
         <Link to='/booking/1'><img className="image" src={CoxsBazar} alt="CoxsBazar"/></Link>
-        <div class="image-text">COX'S BAZAR</div>
+        <div className="image-text">COX'S BAZAR</div>
         </Grid>
         <Grid item xs={12} sm={4}  md={4} className="image-container">
         <Link to='/booking/2'><img className="image" src={Sreemongol} alt="Sreemongol"/></Link>
-        <div class="image-text">SREEMONGOL</div>
+        <div className="image-text">SREEMONGOL</div>
         </Grid>
         <Grid item xs={12} sm={4}  md={4} className="image-container">
         <Link to='/booking/3'><img className="image" src={sundorbon} alt="sundorbon"/></Link>

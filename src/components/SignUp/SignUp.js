@@ -48,10 +48,9 @@ let { from } = location.state || { from: { pathname: "/" } };
   const fbSignIn = () => {
     handleFbSignIn()
     .then(res => {
-      console.log(res);
-      // setUser(res);
-      // setLoggedInUser(res);
-      // history.replace(from);
+      setUser(res);
+      setLoggedInUser(res);
+      history.replace(from);
     })
 
 }

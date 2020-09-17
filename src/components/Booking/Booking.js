@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import places from '../../fakeData/place-description';
 import {Container} from 'react-bootstrap';
@@ -11,6 +11,9 @@ import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
 } from '@material-ui/pickers';
+import { BookingData } from '../../App';
+
+
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -20,8 +23,10 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 const Booking = () => {
+    
+  
     const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
-
+    
     const handleDateChange = (date) => {
     setSelectedDate(date);
     };
@@ -30,8 +35,9 @@ const Booking = () => {
     const {imageId}=useParams();
     const place=places.find(place=>place.id===imageId);
     return (
-        <div className={classes.root}>
-       <Container >
+    
+      <div className={classes.root}>
+      <Container >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={12} md={5}>
           <div>
@@ -41,7 +47,7 @@ const Booking = () => {
           </div>
         </Grid>
         <Grid item xs={12} sm={12} md={5}>
-            <form className="bookingForm" noValidate autoComplete="off">
+            <form className="bookingForm" autoComplete="off">
             <InputLabel style={{marginTop:4}} htmlFor="outlined-full-width">Origin
             < TextField
           id="outlined-full-width"
@@ -109,7 +115,7 @@ const Booking = () => {
                     </MuiPickersUtilsProvider>
                     </Grid> 
                 </Grid>
-                <Link to="/hotels"><button className='btn btn-warning bookingButton'>Book Now</button></Link>
+                <Link to={"/hotels/"+imageId}><button className='btn btn-warning bookingButton'>Book Now</button></Link>
 
             </form>
             

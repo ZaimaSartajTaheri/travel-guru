@@ -1,12 +1,13 @@
-import React, { useContext, useState } from 'react';
-import { UserContext } from '../../App';
-import { Link, useParams } from 'react-router-dom';
+import React, {useState } from 'react';
+import { useParams } from 'react-router-dom';
 import {Container} from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import hotelsData from '../../fakeData'
+import hotelsData from '../../fakeData/hotels';
 import Hotel from '../Hotel/Hotel';
-import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import places from '../../fakeData/place-description';
+import './Hotels.css';
+//import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
@@ -16,21 +17,27 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 const Hotels = () => {
+    
+    
     const classes = useStyles();
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const {imageId}=useParams();
+    const place=places.find(place=>place.id===imageId);
+    
+    
     const [hotels,setHotels]=useState(hotelsData);
-    const mapStyles = {
-        width: '100%',
-        height: '100%',
-      };
+    const filteredHotels=hotels.filter(hotel=>hotel.placeId===imageId);
+    
+    
     return (
         <div className={classes.root}>
-        <Container >
-       <Grid container spacing={2}>
-         <Grid item xs={12} sm={12} md={5}>
+        <Container>
+        <h3 className="text-white">{place.name}</h3>
+        <Grid container spacing={2}>
+        
+         <Grid item xs={12} sm={12} md={6}>
            <div>
                {
-                  hotels.map(hotel=><Hotel  hotel={hotel}></Hotel>)
+                  filteredHotels.map(hotel=><Hotel id={hotel.id} hotel={hotel}></Hotel>)
                }
                 
                

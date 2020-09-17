@@ -16,10 +16,14 @@ import { createContext } from 'react';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import { MapContainer } from './components/Hotels/MapContainer';
 export const UserContext=createContext();
+export const BookingData=createContext();
+
 
 
 function App() {
   const [loggedIn,setLoggedIn]=useState({});
+  
+  
   return (
     <UserContext.Provider value={[loggedIn,setLoggedIn]} >
       
@@ -35,18 +39,20 @@ function App() {
           <Route path='/mapcontainer'>
             <MapContainer></MapContainer>
           </Route>
-          <Route path='/booking/:imageId'>
-            <Booking></Booking>
-          </Route>
           <Route path="/signup">
             <SignUp></SignUp>
           </Route>
           <Route path="/login">
             <LogIn></LogIn>
           </Route>
-          <PrivateRoute path="/hotels">
+          
+          <Route path='/booking/:imageId'>
+            <Booking></Booking>
+          </Route>
+          <PrivateRoute path="/hotels/:imageId">
               <Hotels></Hotels>
           </PrivateRoute>
+          
           <Route exact path='/'>
             <Home></Home>
           </Route>
