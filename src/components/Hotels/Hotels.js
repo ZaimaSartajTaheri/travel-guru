@@ -36,7 +36,7 @@ const Hotels = () => {
               </div>
             </Grid>
             <Grid item xs={12} sm={12} md={5}>
-              <MapContainer></MapContainer>
+              <MapContainer/>
             </Grid>
          </Grid>
         </Container>

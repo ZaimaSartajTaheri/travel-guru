@@ -9,7 +9,7 @@ import google from '../../utilities/Icon/google.png';
 import { useForm } from "react-hook-form";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Link, useHistory, useLocation } from 'react-router-dom';
-import { handleFbSignIn, handleGoogleSignIn, handleGoogleSignOut,signInWithEmailPassword } from '../firbaseConfig/firebaseManager';
+import { handleFbSignIn, handleGoogleSignIn,signInWithEmailPassword } from '../firbaseConfig/firebaseManager';
 import { UserContext } from '../../App';
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -58,7 +58,6 @@ const onSubmit = (data)=>{
   if(data.email && data.password){
         signInWithEmailPassword(data.email,data.password)
         .then(res=>{
-            //console.log(res.error);
             setUser(res);
             setLoggedInUser(res);
             history.replace(from);

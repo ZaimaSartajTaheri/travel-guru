@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import logo from '../../utilities/LogoWhite.png'
 import {
     Navbar,
@@ -25,14 +25,13 @@ const Header = () => {
               <Button variant="outline-light">Search</Button>
             </Form>
             <Nav>
-              <Nav.Link className="whiteText" href="#">News</Nav.Link>
               <Nav.Link className="whiteText" href="#">Destination</Nav.Link>
               <Nav.Link className="whiteText" href="#">Contact</Nav.Link>
               {
                 loggedInUser.isSignedIn?<p className="btn btn-warning mt-2 mr-2">{loggedInUser.name}</p>:<Link to="/login"><button className="btn btn-warning mt-2 mr-2">LogIn</button></Link>
               }
               {
-                loggedInUser.email && <Link to="/login"><button className="btn btn-warning mt-2" onClick={()=>{setLoggedInUser({})}}>Sign Out</button></Link>
+                loggedInUser.email && <Link to="/login"><button className="btn btn-warning mt-2" onClick={()=>{setLoggedInUser({})}}>Log Out</button></Link>
               }
               
               

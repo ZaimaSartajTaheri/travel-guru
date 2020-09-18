@@ -23,10 +23,14 @@ const useStyles = makeStyles((theme) => ({
 const Booking = () => {
 
 
-  const [selectedDate, setSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+  const [fromSelectedDate, setFromSelectedDate] = React.useState(new Date('2014-08-18T21:11:54'));
+  const [toSelectedDate, setToSelectedDate] = React.useState(new Date('2014-08-22T21:11:54'));
 
-  const handleDateChange = (date) => {
-    setSelectedDate(date);
+  const handleFromDateChange = (date) => {
+    setFromSelectedDate(date);
+  };
+  const handleToDateChange = (date) => {
+    setToSelectedDate(date);
   };
 
   const classes = useStyles();
@@ -49,8 +53,6 @@ const Booking = () => {
               <InputLabel style={{ marginTop: 4 }} htmlFor="outlined-full-width">Origin
                 <TextField
                   id="outlined-full-width"
-
-
                   value="DHAKA"
                   fullWidth
                   margin="normal"
@@ -60,11 +62,9 @@ const Booking = () => {
                   variant="outlined"
                 />
               </InputLabel>
-
               <InputLabel htmlFor="outlined-full-width">Destination
                 < TextField
                   id="outlined-full-width"
-
                   value={place.name}
                   fullWidth
                   margin="normal"
@@ -85,8 +85,8 @@ const Booking = () => {
                         id="date-picker-dialog"
                         label="From"
                         format="MM/dd/yyyy"
-                        value={selectedDate}
-                        onChange={handleDateChange}
+                        value={fromSelectedDate}
+                        onChange={handleFromDateChange}
                         KeyboardButtonProps={{
                           'aria-label': 'change date',
                         }}
@@ -104,8 +104,8 @@ const Booking = () => {
                         id="date-picker-dialog"
                         label="To"
                         format="MM/dd/yyyy"
-                        value={selectedDate}
-                        onChange={handleDateChange}
+                        value={toSelectedDate}
+                        onChange={handleToDateChange}
                         KeyboardButtonProps={{
                           'aria-label': 'change date',
                         }}
@@ -116,15 +116,10 @@ const Booking = () => {
                 </Grid>
               </Grid>
               <Link to={"/hotels/" + imageId}><button className='btn btn-warning bookingButton'>Book Now</button></Link>
-
             </form>
-
-
           </Grid>
-
         </Grid>
       </Container>
-
     </div>
   );
 };

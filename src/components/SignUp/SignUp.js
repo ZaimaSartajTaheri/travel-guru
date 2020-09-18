@@ -21,7 +21,6 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const SignUp = () => {
-  //const [newUser,setNewUser]=useState(false);
   const [user,setUser]=useState({
       isSignedIn:false,
       name:'',
@@ -101,7 +100,7 @@ const SignUp = () => {
                   <input className="form-control" type="text" name="email" ref={register({ required: true ,pattern:/\S+@\S+\.\S+/})} />
                   {errors.email && errors.email.type==="required" && <span className="text-danger">Please Enter Your Email Address</span>}
                   {errors.email && errors.email.type==="pattern" && <span className="text-danger">Invalid Email</span>}
-                  {!errors.email && <span className="text-danger">{user.error}</span>}
+                  {!errors.email && <span className="text-danger">{loggedInUser.error}</span>}
                   </div>
                   <div className="form-group">
                     <label htmlFor="password">Password</label>

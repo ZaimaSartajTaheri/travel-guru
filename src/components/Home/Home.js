@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import {Container} from 'react-bootstrap';
 import CoxsBazar from '../../utilities/Image/Sajek.png';
 import Sreemongol from '../../utilities/Image/Sreemongol.png';
@@ -27,7 +27,7 @@ const Home = () => {
             <div>
                 <h3 className="title">COX'S BAZAR</h3>
                 <p className="description">Cox's Bazar is a city, fishing port, tourism centre and district headquarters in southeastern Bangladesh. It is famous mostly for its long natural sandy beach, and it ...</p>
-                <button className="btn btn-warning">Booking</button>
+                <Link to='/booking/1'><button className="btn btn-warning">Booking</button></Link>
             </div>
           </Grid>
           <Grid item md={7}  container spacing={2}>
