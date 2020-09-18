@@ -7,51 +7,40 @@ import hotelsData from '../../fakeData/hotels';
 import Hotel from '../Hotel/Hotel';
 import places from '../../fakeData/place-description';
 import './Hotels.css';
-//import {Map, InfoWindow, Marker, GoogleApiWrapper} from 'google-maps-react';
+import { MapContainer } from './MapContainer';
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
-      padding:150,
+      padding:100,
     },
     
   }));
 
 const Hotels = () => {
-    
-    
     const classes = useStyles();
     const {imageId}=useParams();
     const place=places.find(place=>place.id===imageId);
-    
-    
     const [hotels,setHotels]=useState(hotelsData);
     const filteredHotels=hotels.filter(hotel=>hotel.placeId===imageId);
-    
-    
     return (
-        <div className={classes.root}>
+      <div className={classes.root}>
         <Container>
-        <h3 className="text-white">{place.name}</h3>
-        <Grid container spacing={2}>
-        
-         <Grid item xs={12} sm={12} md={6}>
-           <div>
-               {
-                  filteredHotels.map(hotel=><Hotel id={hotel.id} hotel={hotel}></Hotel>)
-               }
-                
-               
-           </div>
+          <h3 className="text-white">{place.name}</h3>
+          <Grid container spacing={2}>
+          
+            <Grid item xs={12} sm={12} md={6}>
+              <div>
+                  {
+                      filteredHotels.map(hotel=><Hotel id={hotel.id} hotel={hotel}></Hotel>)
+                  }
+              </div>
+            </Grid>
+            <Grid item xs={12} sm={12} md={5}>
+              <MapContainer></MapContainer>
+            </Grid>
          </Grid>
-         <Grid item xs={12} sm={12} md={5}>
-            
-        
-         </Grid>
-         
-       </Grid>
-       </Container>
-       
-     </div>
+        </Container>
+      </div>
     );
 };
 

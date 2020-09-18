@@ -1,7 +1,3 @@
-/* .signUpPage{
-   background-color: white;  
-   z-index:1;
-} */
 .signUp{
     padding:50px;
     margin-left:30%;
@@ -40,7 +36,7 @@
 hr{
     
     width:20%;
-    background-color:gray;
+    background-color:white;
 }
 .hr-first{
     margin-left:29%;
@@ -50,5 +46,5 @@ hr{
 }
 .or-text{
     margin-top:3px;
-    color:gray;
+    color:white;
 }

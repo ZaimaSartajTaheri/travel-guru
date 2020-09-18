@@ -26,43 +26,38 @@ function App() {
   
   return (
     <UserContext.Provider value={[loggedIn,setLoggedIn]} >
-      
-      
       <div className="App">
-
-      <Router>
-        <Header></Header>
-        <Switch>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route path='/mapcontainer'>
-            <MapContainer></MapContainer>
-          </Route>
-          <Route path="/signup">
-            <SignUp></SignUp>
-          </Route>
-          <Route path="/login">
-            <LogIn></LogIn>
-          </Route>
-          
-          <Route path='/booking/:imageId'>
-            <Booking></Booking>
-          </Route>
-          <PrivateRoute path="/hotels/:imageId">
-              <Hotels></Hotels>
-          </PrivateRoute>
-          
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='*'>
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-      </Router>
+        <Router>
+          <Header></Header>
+          <Switch>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route path='/mapcontainer'>
+              <MapContainer></MapContainer>
+            </Route>
+            <Route path="/signup">
+              <SignUp></SignUp>
+            </Route>
+            <Route path="/login">
+              <LogIn></LogIn>
+            </Route>
+            <Route path='/booking/:imageId'>
+              <Booking></Booking>
+            </Route>
+            <PrivateRoute path="/hotels/:imageId">
+                <Hotels></Hotels>
+            </PrivateRoute>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='*'>
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+        </Router>
       </div>
-      </UserContext.Provider>
+    </UserContext.Provider>
       
     
   );
