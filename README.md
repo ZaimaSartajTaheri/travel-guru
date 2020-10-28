@@ -13,6 +13,8 @@
 
    5.User can also easily logout form his account.
 
+   6.Google login,Facebook login,Form login system is created here using firebase authentication.
+
 **Technologies:** ReactJS, React router, HTML5, CSS3, Bootstrap4, MaterialUI
 
 **Hosting & Authentication website:** Firebase
