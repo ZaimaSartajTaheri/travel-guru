@@ -72,7 +72,15 @@ export const createWithEmailPassword=(name,email,password)=>{
 export const signInWithEmailPassword=(email,password)=>{
     return firebase.auth().signInWithEmailAndPassword(email,password)
     .then(res=>{
-        
+      // var user = firebase.auth().currentUser;
+      // if (user != null) {
+      //   user.providerData.forEach(function (res) {
+         
+      //     console.log("  Provider-specific UID: " + res.uid);
+      //     console.log("  Name: " + res.displayName);
+         
+      //   });
+      // }
         const newUserInfo = res.user;
         newUserInfo.isSignedIn=true;
         newUserInfo.error ='';

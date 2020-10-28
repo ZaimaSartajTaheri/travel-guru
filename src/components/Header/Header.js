@@ -31,7 +31,7 @@ const Header = () => {
                 loggedInUser.isSignedIn?<p className="btn btn-warning mt-2 mr-2">{loggedInUser.name}</p>:<Link to="/login"><button className="btn btn-warning mt-2 mr-2">LogIn</button></Link>
               }
               {
-                loggedInUser.email && <Link to="/login"><button className="btn btn-warning mt-2" onClick={()=>{setLoggedInUser({})}}>Log Out</button></Link>
+                loggedInUser.isSignedIn && <Link to="/login"><button className="btn btn-warning mt-2" onClick={()=>{setLoggedInUser({})}}>Log Out</button></Link>
               }
               
               

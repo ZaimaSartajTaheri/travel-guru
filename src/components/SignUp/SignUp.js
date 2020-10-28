@@ -28,25 +28,25 @@ const SignUp = () => {
       photo:'',
   })
   const [loggedInUser,setLoggedInUser]=useContext(UserContext);
-  let history = useHistory();
-  let location = useLocation();
+  // let history = useHistory();
+  // let location = useLocation();
 
-  let { from } = location.state || { from: { pathname: "/signup" } };
+  // let { from } = location.state || { from: { pathname: "/signup" } };
   
   const GoogleSignIn=()=>{
       handleGoogleSignIn()
       .then(res=>{
           setUser(res);
-          setLoggedInUser(res);
-          history.replace(from);
+          // setLoggedInUser(res);
+          // history.replace(from);
       })
   }
   const fbSignIn = () => {
     handleFbSignIn()
     .then(res => {
       setUser(res);
-      setLoggedInUser(res);
-      history.replace(from);
+      // setLoggedInUser(res);
+      // history.replace(from);
     })
   }
 
@@ -61,8 +61,8 @@ const SignUp = () => {
         createWithEmailPassword(name,data.email,data.password)
         .then(res=>{
             setUser(res);
-            setLoggedInUser(res);
-            history.replace(from);
+            // setLoggedInUser(res);
+            // history.replace(from);
 
         })
       }
@@ -100,7 +100,7 @@ const SignUp = () => {
                   <input className="form-control" type="text" name="email" ref={register({ required: true ,pattern:/\S+@\S+\.\S+/})} />
                   {errors.email && errors.email.type==="required" && <span className="text-danger">Please Enter Your Email Address</span>}
                   {errors.email && errors.email.type==="pattern" && <span className="text-danger">Invalid Email</span>}
-                  {!errors.email && <span className="text-danger">{loggedInUser.error}</span>}
+                  {!errors.email && <span className="text-danger">{user.error}</span>}
                   </div>
                   <div className="form-group">
                     <label htmlFor="password">Password</label>

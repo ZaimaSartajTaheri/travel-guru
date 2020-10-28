@@ -21,12 +21,12 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 const LogIn = () => {
-  const [user,setUser]=useState({
-    isSignedIn:false,
-    name:'',
-    email:'',
-    photo:'',
-  })
+  // const [user,setUser]=useState({
+  //   isSignedIn:false,
+  //   name:'',
+  //   email:'',
+  //   photo:'',
+  // })
 
   
 const [loggedInUser,setLoggedInUser]=useContext(UserContext);
@@ -37,7 +37,7 @@ let { from } = location.state || { from: { pathname: "/" } };
 const GoogleSignIn=()=>{
   handleGoogleSignIn()
   .then(res=>{
-      setUser(res);
+      // setUser(res);
       setLoggedInUser(res);
       history.replace(from);
   })
@@ -45,7 +45,7 @@ const GoogleSignIn=()=>{
 const fbSignIn = () => {
   handleFbSignIn()
   .then(res => {
-    setUser(res);
+    // setUser(res);
     setLoggedInUser(res);
     history.replace(from);
   })
@@ -58,7 +58,7 @@ const onSubmit = (data)=>{
   if(data.email && data.password){
         signInWithEmailPassword(data.email,data.password)
         .then(res=>{
-            setUser(res);
+            // setUser(res);
             setLoggedInUser(res);
             history.replace(from);
         })
