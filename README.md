@@ -2,6 +2,7 @@
 **Live Website:** https://travel-guru-88318.web.app/home
 
 **Features**
+
    1.User can select any place among three places by clicking one of the images.
 
    2.After selecting a place user will be redirect to booking form where destination field will be already filled. User just need enter the start date and end date.
